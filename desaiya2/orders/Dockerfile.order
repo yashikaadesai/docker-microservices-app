@@ -1,0 +1,18 @@
+FROM python:latest
+
+
+COPY orders/app.py /app/
+# COPY orders.sql /app/
+
+
+WORKDIR /app
+
+
+RUN pip3 install flask
+RUN pip3 install requests
+
+
+ENV FLASK_APP=app.py
+
+
+CMD ["flask", "run", "--host=0.0.0.0"]
