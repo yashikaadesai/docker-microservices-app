@@ -1,0 +1,45 @@
+services:
+  user:
+    build:
+      context: .
+      dockerfile: ./users/Dockerfile.users
+    ports:
+      - "9000:5000"
+    networks:
+      - desaiya2
+  products:
+    build:
+      context: .
+      dockerfile: ./products/Dockerfile.products
+    ports:
+      - "9001:5000"
+    networks:
+      - desaiya2
+  search:
+    build:
+      context: .
+      dockerfile: ./search/Dockerfile.search
+    ports:
+      - "9002:5000"
+    networks:
+      - desaiya2
+  orders:
+    build:
+      context: .
+      dockerfile: ./orders/Dockerfile.order
+    ports:
+      - "9003:5000"
+    networks:
+      - desaiya2
+  logs:
+    build:
+      context: .
+      dockerfile: ./log/Dockerfile.logs
+    ports:
+      - "9004:5000"
+    networks:
+      - desaiya2
+
+networks:
+  desaiya2:
+    driver: bridge
