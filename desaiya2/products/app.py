@@ -96,6 +96,7 @@ def create_product():
     return jsonify({"status":1})
        
 
+#allows you to edit the product
 @app.route('/edit_product', methods=['POST'])
 def edit_product():
     
